@@ -2,7 +2,7 @@
   "name": "seti-ui-beta",
   "theme": "ui",
   "version": "0.1.0",
-  "description": "Beta version of new Seti UI theme",
+  "description": "Beta release(s) for next version of Seti UI theme for Atom.",
   "license": "MIT",
   "repository": "https://github.com/jesseweed/seti-ui-beta",
   "engines": {
