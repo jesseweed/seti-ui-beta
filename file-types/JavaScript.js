@@ -30,4 +30,5 @@ class Sandwich extends Bread {
 
 }
 
+// MAKE A CLUB SANDWICH
 var Club = new Sandwich(3).toppings(['roast beef', 'turkey']);
