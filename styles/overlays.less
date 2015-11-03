@@ -1,0 +1,52 @@
+@import "ui-variables";
+
+atom-panel.modal {
+  color: @text-color;
+  background-color: @overlay-background-color;
+  padding: 20px;
+  border: 1px solid #000;
+  // box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  -webkit-box-shadow: 0px 0px 0px 2500px rgba(0,0,0,0.6);
+  box-shadow: 0px 0px 0px 2500px rgba(0,0,0,0.6);
+  // border-radius: 10px;
+  // margin-top: 60px;
+  // margin-top: 10%;
+
+  atom-text-editor[mini] {
+    margin-bottom: @component-padding;
+  }
+
+  .key-binding {
+    background: @project-header-bg;
+    border: 0;
+    -webkit-box-shadow: none;
+  }
+
+  .select-list ol.list-group,
+  &.select-list ol.list-group {
+
+    // background-color: lighten(@overlay-background-color, 3%);
+
+
+    li {
+      padding: @component-padding;
+      border-bottom: 1px solid @overlay-background-color;
+
+      &.two-lines { padding: @component-padding/2 @component-padding; }
+
+      .status.icon {
+        float: right;
+        margin-left: @component-icon-padding;
+        &:before {
+          margin-right: 0;
+        }
+      }
+
+      &.selected {
+        .status.icon {
+          color: red;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "seti-ui-beta",
+  "theme": "ui",
+  "version": "0.0.0",
+  "description": "Beta version of new Seti UI theme",
+  "license": "MIT",
+  "repository": "https://github.com/jesseweed/seti-ui-beta",
+  "engines": {
+    "atom": ">=1.0.0"
+  }
+}

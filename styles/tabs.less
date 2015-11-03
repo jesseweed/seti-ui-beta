@@ -1,0 +1,140 @@
+@modified-icon-width: 8px;
+
+@tab-highlight-size: 2px; // ACTIVE TAB BORDER
+
+@tab-height: 60px; // TAB HEIGHT
+@tab-top-padding: 0px; // SPACE ABOVE TABS
+@tab-bottom-border-height: 0px; // SPACE BELOW TABS
+
+// SET TAB Z-INDEX HIGHER THAN PROJECT TITLE
+ul.list-inline.tab-bar.inset-panel {
+  z-index: 2;
+}
+
+.tab-bar .tab {
+  max-width: 220px;
+}
+
+// CONTAINER
+tabs-bar, .tab-bar {
+  border-bottom: solid @tab-highlight-size @tab-bar-bottom-border-color;
+  height: @tab-height + @tab-top-padding + @tab-bottom-border-height;
+  padding: 0 10px 0 0;
+
+  &:after {
+    background: @tab-background-active;
+    border: 0;
+  }
+
+  tabs-tab, .tab {
+    background: @tab-background;
+    border-bottom: solid @tab-highlight-size @tab-bar-bottom-border-color;
+    border-radius: 0;
+    border-right: solid 1px black;
+    box-shadow: none;
+    color: @text-color;
+    height: @tab-height;
+    // left: -16px;
+    position: relative;
+    padding: 15px 0px 0px 20px;
+    transition: all 0.5s ease;
+    -webkit-transform: none;
+
+    // CLOSE ICON - DUH
+    .close-icon {
+      color: @text-color;
+      margin: 20px 0px 0px 4px;
+      opacity: 0.1;
+      transition: opacity 0.5s ease;
+      -webkit-transform: none;
+      z-index: 3;
+    }
+
+    // TAB HOVER
+    &:hover {
+      background: lighten(@tab-background, 3%);
+
+      .close-icon {
+        cursor: pointer;
+        opacity: 1;
+        transition: color 0.5s ease;
+
+        &:hover {
+          color: @red;
+        }
+      }
+    }
+
+    &:target {
+      background: lighten(@tab-background, 10%);
+    }
+
+    // MODIFIED TAB
+    &.modified:not(:hover) .close-icon {
+      height: @modified-icon-width;
+      margin: 14px 4px 0px 4px;
+      padding: 2px 2px 2px 2px;
+      transition: color 0.5s ease;
+      border-color: @yellow;
+      opacity: 1;
+    }
+
+    // MODIFIED TAB HOVER STATE
+    &.modified:hover .close-icon {
+      color: @text-color-highlight;
+      &:hover {
+        color: @red;
+      }
+    }
+
+    // NAME OF TAB
+    .title {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      width: 75%;
+    }
+
+  }
+
+  tabs-tab.active, .tab.active {
+    border: none;
+    border-bottom: solid @tab-highlight-size @tab-highlight-color;
+    color: @text-color-highlight;
+    box-shadow: none;
+    transition: all 0.5s ease;
+    z-index: 1;
+
+    &, &:before {
+      background: @tab-background-active;
+      height: @tab-height + 0px;
+    }
+
+    &:before {
+      border: none;
+      border-bottom: solid @tab-highlight-size @tab-highlight-color;
+      box-shadow: none;
+    }
+
+  }
+
+
+  tabs-tab:hover, .tab:hover {
+    color: @text-color-highlight;
+  }
+
+  tabs-tab.active:hover .close-icon, .tab.active:hover .close-icon {
+    color: @text-color;
+
+    &:hover {
+      color: inherit;
+    }
+  }
+
+  .placeholder {
+    height: @tab-height + @tab-top-padding + @tab-bottom-border-height;
+    &:after {
+      top: @tab-height + @tab-top-padding + @tab-bottom-border-height;
+    }
+  }
+}

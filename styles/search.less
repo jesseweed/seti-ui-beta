@@ -1,0 +1,28 @@
+atom-panel.bottom {
+  background: @project-header-bg !important;
+
+  .editor-container atom-text-editor {
+    background: @tree-view-background-color;
+    padding-left: 5px;
+  }
+
+  .highlight {
+    background: @blue;
+    color: @project-header-bg !important;
+  }
+
+  .options {
+    color: @blue !important;
+  }
+
+  .btn {
+
+    background: lighten(@background, 5%);
+    transition: background ease 0.4s;
+
+    &:hover {
+      background: lighten(@background, 9%);
+    }
+  }
+
+}
